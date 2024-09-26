@@ -31,11 +31,6 @@ const getImgs = function (qualebottonehopremuto) {
     });
 };
 
-// const btnHide = document.getElementById("btnHide");
-// btnHide.forEach((btn) => {
-//   btn.innerText = "Hide";
-// });
-
 const btns = document.querySelectorAll(".btn-group button:last-of-type");
 
 btns.forEach((btn) => {
@@ -52,5 +47,11 @@ const fromMinToId = function (datas) {
     min.innerText = datas.photos[i].id;
   });
 };
+
+const form = document.getElementById("custom-search").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const customQuery = document.getElementById("custom-search-input").value;
+  getImgs(customQuery);
+});
 
 //barra searh fai la funzione e invoca ()=>getImgs("tigers")
