@@ -36,15 +36,14 @@ const getImgs = function (qualebottonehopremuto) {
 //   btn.innerText = "Hide";
 // });
 
-const btns = document.querySelectorAll(".btn");
+const btns = document.querySelectorAll(".btn-group button:last-of-type");
 
 btns.forEach((btn) => {
-  if (btn.innerText === "Edit") {
-    btn.innerText = "Hide";
-  }
-  //   btn.addEventListener("click", function (e) {
-  //     e.target.closest(".col").classList.add("d-none");
-  //   });
+  btn.innerText = "Hide";
+
+  btn.addEventListener("click", () => {
+    btn.closest(".col-md-4").classList.add("d-none");
+  });
 });
 
 const fromMinToId = function (datas) {
@@ -53,3 +52,5 @@ const fromMinToId = function (datas) {
     min.innerText = datas.photos[i].id;
   });
 };
+
+//barra searh fai la funzione e invoca ()=>getImgs("tigers")
